@@ -30,6 +30,8 @@ let favoriteFoods = [
     "Spaghetti"
 ];
 
+foodElement.innerHTML += `<br>${favoriteFoods}`;
+
 let newFavoriteFood = "Tacos";
 favoriteFoods.push(newFavoriteFood);
 
