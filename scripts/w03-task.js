@@ -23,11 +23,11 @@ let addNumbersButton = document.getElementById("addNumbers");
 addNumbersButton.addEventListener("click", addNumbers);
 
 /* Function Expression - Subtract Numbers */
-function subtract(number1, number2) {
+const subtract = function(number1, number2) {
     return number1 - number2;
 }
 
-function subtractNumbers() {
+const subtractNumbers = function() {
     let subtract1 = document.getElementById("subtract1");
     let subtract2 = document.getElementById("subtract2");
     
