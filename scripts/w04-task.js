@@ -44,7 +44,9 @@ myProfile.placesLived.push({
 document.getElementById("name").textContent = myProfile.name;
 
 /* Photo with attributes */
-document.getElementById("photo").setAttribute("src", myProfile.photo);
+let photo = document.getElementById("photo");
+photo.setAttribute("src", myProfile.photo);
+photo.setAttribute("alt", "profile picture");
 
 /* Favorite Foods List*/
 myProfile.favotireFoods.forEach((food) => {
