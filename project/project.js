@@ -26,10 +26,19 @@ function displayInfo(data) {
     reset();
     data.forEach(word => {
         const basicDiv = createBasicDiv(word);
-        const audioButton = createAudioButton(word);
+
+        const audiosArray = word.phonetics;
+
+        const audioObject = audiosArray.find((ob) => {
+            const src = ob.audio;
+            return src != "";
+        });
+        if (audioObject) {
+            const audioButton = createAudioButton(audioObject);
+            basicDiv.appendChild(audioButton);
+        }
         const meaningDiv = createMeaningDiv(word);
 
-        basicDiv.appendChild(audioButton);
         content.appendChild(basicDiv);
         content.appendChild(meaningDiv);
     });
@@ -50,14 +59,7 @@ function createBasicDiv(data) {
     return div;
 }
 
-function createAudioButton(data) {
-    const audiosArray = data.phonetics;
-
-    const audioObject = audiosArray.find((ob) => {
-        const src = ob.audio;
-        return src != "";
-    });
-
+function createAudioButton(audioObject) {
     const audioSource = audioObject.audio;
 
     const audioButton = document.createElement("img");
